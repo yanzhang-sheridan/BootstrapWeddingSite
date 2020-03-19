@@ -1,0 +1,407 @@
+
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "custom";
+
+
+
+carousel {
+	height:$myWidth;
+	background-color: $myBgcolor;
+}
+
+.carousel {
+
+    .item {
+        background-color:$myBgcolor;
+        height: $myHeight;
+    }
+
+    img{
+        margin: auto;
+        width: $fullWidth
+    }
+
+    caption{
+        margin-bottom: 58px;
+        h3 {
+            color:$myBgcolor !important; 
+
+        }
+    }
+
+} 
+
+
+
+
+@media (max-width:680px){
+
+	.carousel-caption{
+
+		display:none;
+
+	}
+
+}
+
+ 
+@mixin list-style ($radius,$weight){
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+	font-weight: $weight;
+
+}
+
+ 
+
+.container{
+	padding:80px 120px;
+	font-size: 15px;
+}
+
+ 
+
+.person{
+
+	border:10px solid transparent;
+	margin-bottom:25px;
+	width:200px;
+	height: 200px;
+	opacity: 0.7;
+
+}
+
+ 
+.person:hover{
+
+	border-color:#f1f1f1;
+}
+
+  
+
+.bg-1 {
+
+	background:#2d2d30;
+	color:#bdbdbd;
+	h3{color: $mycolor;}
+	p{font-style: italic;}
+
+} 
+
+
+.list-group-item:first-child{
+
+	@include list-style(0px,200);
+	span {height:80%;};
+
+}
+
+ 
+
+.list-group-item:last-child{
+
+	@include list-style(0px,200);
+	span {height:80%;};
+
+}
+
+ 
+
+.thumbnail{
+
+	padding:0 0 15px 0;
+	border:none;
+	border-radius: $myRadius;
+
+	p{
+
+		margin-top:15px;
+		color:#555;
+	
+	}
+
+}
+
+.btn-basic {
+	background-color: #333;
+	color:#f1f1f1;
+	border-radius: $myRadius;
+	transition:.2s;
+} 
+
+.btn{
+
+	@extend .btn-basic;
+	padding: 10px 20px;
+
+}
+
+
+.btn:hover, .btn:focus{
+
+	border:1px solid #333;
+
+	background-color:$mycolor;
+
+	color:$mycolor;
+
+}
+
+
+.modal-basic {
+	background-color: #333;
+	color:$mycolor !important;
+	text-align: center;
+	font-size: 30px;
+}
+
+.modal-header {
+	padding: $myPadding;
+	@extend .modal-basic;
+}
+
+
+	
+ 
+.modal-body{
+	padding: $myPadding
+}
+ 
+
+
+
+h4,.close{
+
+	@extend .modal-basic;
+}
+
+ 
+#Map{
+
+	width:100%;
+
+	height: 350px;
+
+	//filter:grayscale(100%);
+
+}
+
+
+@mixin nav-status {
+
+	color: $mycolor !important;
+	background-color: $myBgcolor !important;
+}
+
+.navbar {
+
+	margin-bottom: 0px;
+	background-color: #2d2d30;
+	border:0;
+	font-size:16px !important;
+	letter-spacing: 6px;
+	opacity: 0.9;
+
+	li a, .navbar-brand{
+
+		color:#d5d5d5 !important;
+	
+	}
+
+	li a:hover{
+
+		@include nav-status;
+	
+	}
+
+}
+
+ 
+ 
+.navbar-nav li.active a{
+
+	@include nav-status;
+
+}
+
+ 
+
+.navbar-default .navbar-toggle{
+
+	border-color:transparent;
+
+}
+
+
+
+
+// .navbar{
+
+// 	margin-bottom: 0px;
+
+// 	background-color: #2d2d30;
+
+// 	border:0;
+
+// 	font-size:16px !important;
+
+// 	letter-spacing: 6px;
+
+// 	opacity: 0.9;
+
+
+// 	li a, .navbar-brand{
+
+// 		color:#d5d5d5 !important;
+// 	}	
+
+// }
+
+
+ 
+
+// .navbar li a, .navbar .navbar-brand{
+
+// 	color:#d5d5d5 !important;
+
+// }
+
+ 
+
+// .navbar li a:hover{
+
+// 	color:#fff !important;
+
+// 	background-color: #000 !important;
+
+// }
+
+ 
+
+// .navbar-nav li.active a{
+
+// 	color:#000 !important;
+
+// 	background-color: #fff!important;	
+
+// }
+
+ 
+
+// .navbar-default .navbar-toggle{
+
+// 	border-color:transparent;
+
+// }
+
+ 
+
+.open .dropdown-toggle{
+
+	color:$mycolor;
+
+	background-color: #555;
+
+}
+
+ 
+
+.dropdown-menu li {
+	
+	a{color:$myBgcolor !important;}
+	a:hover{background-color: red !important;}
+
+}
+
+ 
+
+
+/*Modoval */
+.div_article {
+	margin-top: 24px;
+	
+}
+
+
+
+ .item_article_first {
+	background-color:  #2d2d30 !important;
+	border-color: #2d2d30  !important;
+	
+}
+
+
+@mixin item-display {
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+
+}
+
+.item_article {
+	min-height: 120px;
+	@include item-display;
+	.row {
+		width: $fullWidth;
+		@include item-display;
+	}
+}
+
+
+.div_center {
+    height: auto;
+    max-height: 140px;  
+    overflow: hidden; 
+}
+
+.div_article_title {
+	font-size: 22px;
+}
+
+.div_article_content {
+	color: #a0a0a0;
+    word-wrap:break-word;  
+    word-break:break-all;  
+	width: $fullWidth;
+	font-size: 15px;
+}
+
+.iv_article {
+	width: 88px;
+	height: 88px;
+	margin: auto;
+}
+
+.div_right_info {
+	text-align: right;
+}
+
+
+
+
+ 
+
+footer{
+
+	background-color: #2d2d30;
+	color:#f5f5f5;
+	padding:32px;
+
+	a{color:#f5f5f5;}
+
+	a:hover{
+		color:#777;
+			text-decoration: none;
+	}
+	
+}
+
+ 
+
+ 
