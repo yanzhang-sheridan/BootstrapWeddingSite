@@ -1,2 +1,2 @@
 # BootstrapWeddingSite
-a bootstrape/jquery website
+http://danandnicolina.nofinsports.com/
